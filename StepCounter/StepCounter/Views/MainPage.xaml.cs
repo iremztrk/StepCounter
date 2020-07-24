@@ -15,7 +15,7 @@ namespace StepCounter.Views
         {
             InitializeComponent();
 
-            MasterBehavior = MasterBehavior.Popover;
+            MasterBehavior = MasterBehavior.Default;
         }
     }
 }
