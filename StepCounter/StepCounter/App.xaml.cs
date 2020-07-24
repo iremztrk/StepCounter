@@ -1,8 +1,5 @@
-﻿using System;
+﻿using StepCounter.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using StepCounter.Services;
-using StepCounter.Views;
 
 namespace StepCounter
 {
@@ -12,8 +9,6 @@ namespace StepCounter
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
         }
 
