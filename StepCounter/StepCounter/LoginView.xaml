@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StepCounter.LoginView"
+             NavigationPage.HasNavigationBar="False" >
+             
+    <ContentPage.Content>
+        <StackLayout Spacing="0" BackgroundColor="LightBlue" >
+            <Image Source="appIcon" HorizontalOptions="Center" Margin="0,100,0,20"  />
+            <Label Text="Step Counter" HorizontalOptions="Center" TextColor="White" FontSize="30" Margin="20"/>
+            <Entry TextColor="DarkBlue"  Placeholder="username" PlaceholderColor="Orange"  Margin="15"/>
+            <StackLayout Orientation="Horizontal" Spacing="5">
+                <Entry x:Name="entryPassword" IsPassword="True" TextColor="DarkBlue" Placeholder="password" PlaceholderColor="Orange"  Margin="15" HorizontalOptions="FillAndExpand" />
+                <Switch x:Name="switchPassword" Toggled="switchPassword_Toggled" HorizontalOptions="End" />
+            </StackLayout>
+            <Button Text="log in"   Clicked="LoginButton_Clicked"   BackgroundColor="LightGreen" Margin="20,30,20,30" CornerRadius="30" />
+            <Label Text="Don't have an account?" TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+            <Button Text="sign up" Clicked="SignUpButton_Clicked" Margin="150,0,150,30" CornerRadius="30" VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

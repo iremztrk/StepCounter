@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StepCounter.CreateNewUserView"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightBlue">
+            <Image Source="appIcon" Margin="0,50,0,0" />
+            <Entry Placeholder="name" Margin="40,8,40,8"/>
+            <Entry Placeholder="surname" Margin="40,8,40,8"/>
+            <Entry Placeholder="email" Margin="40,8,40,8" />
+            <Entry Placeholder="username" Margin="40,8,40,8" />
+            <Entry Placeholder="password" Margin="40,8,40,8" />
+            <Entry Placeholder="confirm password" Margin="40,8,40,8" />
+            <Button Text="sign up" Clicked="Button_Clicked" Margin="150,10,150,30" CornerRadius="30" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
