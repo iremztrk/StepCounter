@@ -129,7 +129,7 @@ namespace StepCounter
             BindingContext = this;
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             if (labelNameValidation.IsVisible == false &&
                 labelSurnameValidation.IsVisible == false &&
@@ -145,10 +145,15 @@ namespace StepCounter
                 newUser.Surname = Surname;
                 newUser.Password = Password;
                 newUser.Email = Email;
-                Navigation.PopAsync();
+
+                await App.UserDB.SaveUserAsync(newUser);
+
+                await Navigation.PopAsync();
+
+                await DisplayAlert("", "Kaydınız basarı ıle alındı", "Tamam");
             }
             else
-                DisplayAlert("Uyarı", "Bütün alanları doldurmanız gerekmektedır", "Tamam");
+               await DisplayAlert("Uyarı", "Bütün alanları doldurmanız gerekmektedır", "Tamam");
         }
 
         private bool CheckMailRegex()

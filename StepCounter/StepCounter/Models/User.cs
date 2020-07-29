@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SQLite;
 
 namespace StepCounter.Models
 {
     public class User
     {
+        [PrimaryKey, AutoIncrement]
         public int UserId { get; set; }
         public string Username { get; set; }
         public string Name { get; set; }

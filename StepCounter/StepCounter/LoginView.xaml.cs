@@ -1,4 +1,5 @@
-﻿using StepCounter.Views;
+﻿using StepCounter.Models;
+using StepCounter.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,8 @@ namespace StepCounter
         {
             InitializeComponent();
             BindingContext = this;
+
+            //var users = App.UserDB.GetUserAsync().Result;
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)
@@ -86,7 +89,18 @@ namespace StepCounter
                 DisplayAlert("Hata", "Lütfen gecerlı bır parola gırınız", "Tamam");
                 entryPassword.Focus();
             }
-            Navigation.PushAsync(new MainPage());
+            else
+            {
+                Response loginResponse = new Response();
+                loginResponse = App.UserDB.Login(Username, Password);
+
+                if(loginResponse.Success )
+                    Navigation.PushAsync(new MainPage(Username));
+                else
+                {
+                    DisplayAlert("Hata", loginResponse.ErrorMessage, "Tamam");
+                }
+            }
         }
 
 
