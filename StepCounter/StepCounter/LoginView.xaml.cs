@@ -13,14 +13,42 @@ namespace StepCounter
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginView : ContentPage
     {
+        private string username;
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+            set
+            {
+                username = value;
+                OnPropertyChanged(nameof(Username));
+            }
+        }
+        private string password;
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }
+
         public LoginView()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new MainPage());
+            Login();
         }
 
         private void SignUpButton_Clicked(object sender, EventArgs e)
@@ -35,5 +63,32 @@ namespace StepCounter
             else
                 entryPassword.IsPassword = true;
         }
+
+        private void entryUsername_Completed(object sender, EventArgs e)
+        {
+            entryPassword.Focus();
+        }
+
+        private void entryPassword_Completed(object sender, EventArgs e)
+        {
+            Login();
+        }
+
+        private void Login()
+        {
+            if (string.IsNullOrEmpty(Username))
+            {
+                DisplayAlert("Hata", "Lütfen gecerlı bır kullanıcı adı gırınız", "Tamam");
+                entryUsername.Focus();
+            }
+            else if (string.IsNullOrEmpty(Password))
+            {
+                DisplayAlert("Hata", "Lütfen gecerlı bır parola gırınız", "Tamam");
+                entryPassword.Focus();
+            }
+            Navigation.PushAsync(new MainPage());
+        }
+
+
     }
 }

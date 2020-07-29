@@ -8,15 +8,22 @@
              NavigationPage.HasNavigationBar="False"
              >
     <ContentPage.Content>
-        <StackLayout BackgroundColor="LightBlue">
+        <StackLayout BackgroundColor="LightBlue" Spacing="0">
             <Image Source="appIcon" Margin="0,50,0,0" />
-            <Entry Placeholder="name" Margin="40,8,40,8"/>
-            <Entry Placeholder="surname" Margin="40,8,40,8"/>
-            <Entry Placeholder="email" Margin="40,8,40,8" />
-            <Entry Placeholder="username" Margin="40,8,40,8" />
-            <Entry Placeholder="password" Margin="40,8,40,8" />
-            <Entry Placeholder="confirm password" Margin="40,8,40,8" />
-            <Button Text="sign up" Clicked="Button_Clicked" Margin="150,10,150,30" CornerRadius="30" VerticalOptions="EndAndExpand"/>
+            <Entry x:Name="entryName" Text="{Binding Name}" Placeholder="name" Margin="40,8,40,0" Completed="NameEntry_Completed"/>
+            <Label x:Name="labelNameValidation" Text="İsım alanı zorunludur" FontSize="11" Margin="45,0,40,8" TextColor="OrangeRed" />
+            <Entry x:Name="entrySurname" Text="{Binding Surname}" Placeholder="surname" Margin="40,0,40,0" Completed="SurnameEntry_Completed"/>
+            <Label x:Name="labelSurnameValidation" Text="Soy ısım alanı zorunludur" FontSize="11" Margin="45,0,40,8" TextColor="OrangeRed" />
+            <Entry x:Name="entryEmail" Text="{Binding Email}" Placeholder="email" Margin="40,0,40,0" Completed="entryEmail_Completed" />
+            <Label x:Name="labelEmailValidation" Text="Emaıl adresı zorunludur" FontSize="11" Margin="45,0,40,8" TextColor="OrangeRed" />
+            <Entry x:Name="entryUsername" Text="{Binding Username}" Placeholder="username" Margin="40,0,40,0" Completed="entryUsername_Completed" />
+            <Label x:Name="labelUsernameValidation" Text="kullanıcı adı alanı zorunludur" FontSize="11" Margin="45,0,40,8" TextColor="OrangeRed" />
+            <Entry x:Name="entryPassword" IsPassword="True" Text="{Binding Password}" Placeholder="password" Margin="40,0,40,0" Completed="entryPassword_Completed" />
+            <Label x:Name="labelPasswordValidation" Text="lütfen standartlara uygun bır parola gırınız" FontSize="11" Margin="45,0,40,8" TextColor="OrangeRed" />
+            <Entry x:Name="entryConfirmPassword" IsPassword="True" Text="{Binding ConfirmPassword}" Placeholder="confirm password" Margin="40,0,40,0" />
+            <Label x:Name="labelConfirmPasswordValidation" Text="Parolalarınız eşleşmemektedır" FontSize="11" Margin="45,0,40,8" TextColor="OrangeRed" />
+
+            <Button Text="create an account" Clicked="Button_Clicked" Margin="40,10,40,30" CornerRadius="30" VerticalOptions="EndAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

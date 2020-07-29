@@ -11,9 +11,9 @@
         <StackLayout Spacing="0" BackgroundColor="LightBlue" >
             <Image Source="appIcon" HorizontalOptions="Center" Margin="0,100,0,20"  />
             <Label Text="Step Counter" HorizontalOptions="Center" TextColor="White" FontSize="30" Margin="20"/>
-            <Entry TextColor="DarkBlue"  Placeholder="username" PlaceholderColor="Orange"  Margin="15"/>
+            <Entry x:Name="entryUsername" Text="{Binding Username}" TextColor="DarkBlue"  Placeholder="username" PlaceholderColor="Orange"  Margin="15" Completed="entryUsername_Completed"/>
             <StackLayout Orientation="Horizontal" Spacing="5">
-                <Entry x:Name="entryPassword" IsPassword="True" TextColor="DarkBlue" Placeholder="password" PlaceholderColor="Orange"  Margin="15" HorizontalOptions="FillAndExpand" />
+                <Entry x:Name="entryPassword" Text="{Binding Password}" IsPassword="True" TextColor="DarkBlue" Placeholder="password" PlaceholderColor="Orange"  Margin="15" HorizontalOptions="FillAndExpand" Completed="entryPassword_Completed" />
                 <Switch x:Name="switchPassword" Toggled="switchPassword_Toggled" HorizontalOptions="End" />
             </StackLayout>
             <Button Text="log in"   Clicked="LoginButton_Clicked"   BackgroundColor="LightGreen" Margin="20,30,20,30" CornerRadius="30" />
