@@ -81,12 +81,12 @@ namespace StepCounter
         {
             if (string.IsNullOrEmpty(Username))
             {
-                DisplayAlert("Hata", "Lütfen gecerlı bır kullanıcı adı gırınız", "Tamam");
+                DisplayAlert("Warning", "Please enter a valid username", "Ok");
                 entryUsername.Focus();
             }
             else if (string.IsNullOrEmpty(Password))
             {
-                DisplayAlert("Hata", "Lütfen gecerlı bır parola gırınız", "Tamam");
+                DisplayAlert("Warning", "Please enter a valid password", "Ok");
                 entryPassword.Focus();
             }
             else
@@ -98,7 +98,7 @@ namespace StepCounter
                     Navigation.PushAsync(new MainPage(Username));
                 else
                 {
-                    DisplayAlert("Hata", loginResponse.ErrorMessage, "Tamam");
+                    DisplayAlert("Warning", loginResponse.ErrorMessage, "Ok");
                 }
             }
         }

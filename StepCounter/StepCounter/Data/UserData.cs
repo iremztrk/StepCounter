@@ -46,13 +46,13 @@ namespace StepCounter.Data
             var user = _database.Table<User>().Where(p => p.Username == username).FirstOrDefaultAsync().Result;
             if(user == null)
             {
-                response.ErrorMessage = "yok boyle bır kullanıcı";
+                response.ErrorMessage = "User not found";
                 response.Success = false;
                 return response;
             }
             else if(user.Password != password)
             {
-                response.ErrorMessage = "hatalı bır parola gırdınız";
+                response.ErrorMessage = "The password you entered is incorrect";
                 response.Success = false;
                 return response;
             }

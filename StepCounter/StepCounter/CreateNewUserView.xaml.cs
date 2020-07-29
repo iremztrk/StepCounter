@@ -150,10 +150,10 @@ namespace StepCounter
 
                 await Navigation.PopAsync();
 
-                await DisplayAlert("", "Kaydınız basarı ıle alındı", "Tamam");
+                await DisplayAlert("", "Registration successful", "Ok");
             }
             else
-               await DisplayAlert("Uyarı", "Bütün alanları doldurmanız gerekmektedır", "Tamam");
+               await DisplayAlert("Warning", "You must fill in all of the fields", "Ok");
         }
 
         private bool CheckMailRegex()
