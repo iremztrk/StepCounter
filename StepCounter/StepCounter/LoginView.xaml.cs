@@ -103,6 +103,10 @@ namespace StepCounter
             }
         }
 
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Password = "";
+        }
     }
 }

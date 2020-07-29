@@ -138,7 +138,6 @@ namespace StepCounter
                 labelPasswordValidation.IsVisible == false &&
                 labelConfirmPasswordValidation.IsVisible == false)
             {
-
                 User newUser = new User();
                 newUser.Username = Username;
                 newUser.Name = Name;
@@ -146,14 +145,36 @@ namespace StepCounter
                 newUser.Password = Password;
                 newUser.Email = Email;
 
-                await App.UserDB.SaveUserAsync(newUser);
+                var response = App.UserDB.CheckUserBeforeInsert(newUser);
 
-                await Navigation.PopAsync();
+                if (response.Success)
+                {
+                    await App.UserDB.SaveUserAsync(newUser);
 
-                await DisplayAlert("", "Registration successful", "Ok");
+                    await Navigation.PopAsync();
+
+                    await DisplayAlert("", "Registration successful", "Ok");
+                }
+                else
+                {
+                    await DisplayAlert("Error", response.ErrorMessage, "Ok");
+                }
             }
             else
-               await DisplayAlert("Warning", "You must fill in all of the fields", "Ok");
+            {
+                if(labelNameValidation.IsVisible)
+                    await DisplayAlert("Warning", "You must fill name field at form", "Ok");
+                else if(labelSurnameValidation.IsVisible)
+                    await DisplayAlert("Warning", "You must fill surname field at form", "Ok");
+                else if (labelEmailValidation.IsVisible)
+                    await DisplayAlert("Warning", "You must fill email field at form", "Ok");
+                else if (labelUsernameValidation.IsVisible)
+                    await DisplayAlert("Warning", "You must fill username field at form", "Ok");
+                else if (labelPasswordValidation.IsVisible)
+                    await DisplayAlert("Warning", "Password field like 1 uppercase, 1 lowercase, 1 number, 1 symbol at least 4 characters", "Ok");
+                else if(labelConfirmPasswordValidation.IsVisible)
+                    await DisplayAlert("Warning", "Confirm password not matched password", "Ok");
+            }
         }
 
         private bool CheckMailRegex()

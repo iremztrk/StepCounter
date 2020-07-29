@@ -39,6 +39,32 @@ namespace StepCounter.Data
             return _database.DeleteAsync(user);
         }
 
+        public Response CheckUserBeforeInsert(User user)
+        {
+            Response response = new Response();
+            User existUser = new User();
+
+            existUser = _database.Table<User>().Where(p => p.Username == user.Username).FirstOrDefaultAsync().Result;
+            if(existUser != null)
+            {
+                response.Success = false;
+                response.ErrorMessage = "Bu kullanıcı adı daha once alınmıstır";
+
+                return response;
+            }
+
+            existUser = _database.Table<User>().Where(p => p.Email == user.Email).FirstOrDefaultAsync().Result;
+            if (existUser != null)
+            {
+                response.Success = false;
+                response.ErrorMessage = "Bu email ile daha onceden bır kayıt olusturulmustur";
+
+                return response;
+            }
+
+            return response;
+        }
+
         public Response Login(string username, string password)
         {
             Response response = new Response();
