@@ -6,7 +6,9 @@
              mc:Ignorable="d"
              x:Class="StepCounter.Views.AboutPage" >
     <StackLayout>
-        <Label Text="detay sayfası"/> 
+        <Label Text="detay sayfası"/>
+        <Label Text="Adım Sayısı : " />
+        <Label Text="{Binding StepCount}"/>
     </StackLayout>
     
 </ContentPage>

@@ -3,4 +3,6 @@
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
     <application android:label="StepCounter.Android" android:icon="@drawable/appIcon">  </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-feature android:name="android.hardware.sensor.stepcounter" />
+	<uses-feature android:name="android.hardware.sensor.stepdetector" />
 </manifest>
