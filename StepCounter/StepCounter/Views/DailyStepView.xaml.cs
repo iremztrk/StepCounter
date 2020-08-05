@@ -1,15 +1,17 @@
 ﻿using StepCounter.DependencyServices;
 using System;
-using System.ComponentModel;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace StepCounter.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
-    public partial class AboutPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class DailyStepView : ContentPage
     {
         private string stepCount;
         public string StepCount
@@ -25,14 +27,16 @@ namespace StepCounter.Views
             }
         }
 
-
         IStepCounter stepCounterService;
-        public AboutPage()
+
+        public DailyStepView()
         {
             InitializeComponent();
             BindingContext = this;
+
             stepCounterService = DependencyService.Get<IStepCounter>();
-            if(stepCounterService.IsAvailable())
+
+            if (stepCounterService.IsAvailable())
             {
                 stepCounterService.StepCountChanged += StepCounterService_StepCountChanged;
                 stepCounterService.Start();
@@ -43,9 +47,17 @@ namespace StepCounter.Views
             }
         }
 
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            //stepCounterService.Stop();
+        }
+
         private void StepCounterService_StepCountChanged(object sender, StepCountChangedEventArgs e)
         {
-            StepCount = e.Value.ToString();
+            App.currentSteps = (int)e.Value;
+            StepCount = (App.todayStep.StepData + App.currentSteps).ToString(); //e.Value.ToString();
+            //App.todayStep.StepData = (int)e.Value;
         }
     }
 }

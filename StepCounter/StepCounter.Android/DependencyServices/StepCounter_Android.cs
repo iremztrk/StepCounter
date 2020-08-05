@@ -45,7 +45,7 @@ namespace StepCounter.Droid.DependencyServices
         {
             if (stepCounter != null)
             {
-                steps = 0;
+                //steps = App.todayStep.StepData;
 
                 sensorManager.RegisterListener(this, stepCounter, SensorDelay.Normal);
             }
@@ -56,6 +56,8 @@ namespace StepCounter.Droid.DependencyServices
             if (stepCounter != null)
             {
                 sensorManager.UnregisterListener(this, stepCounter);
+
+                //App.todayStep.StepData += steps;
             }
         }
 

@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using StepCounter.Data;
 using System.IO;
 using System;
+using StepCounter.Models;
 
 namespace StepCounter
 {
@@ -21,6 +22,23 @@ namespace StepCounter
                 return userDB;
             }
         }
+
+        private static DailyStepData stepDB;
+        public static DailyStepData StepDB
+        {
+            get
+            {
+                if(stepDB == null)
+                {
+                    stepDB = new DailyStepData(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Step.db3"));
+                }
+                return stepDB;
+            }
+        }
+
+        public static User currentUser;
+        public static DailyStep todayStep;
+        public static int currentSteps;
 
         public App()
         {

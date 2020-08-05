@@ -9,6 +9,8 @@
              
     <StackLayout VerticalOptions="FillAndExpand">
         <Label Text="master sayfası"/>
+
+        <Button x:Name="buttonLogout" Text="Logout" Clicked="buttonLogout_Clicked" VerticalOptions="End"/>
     </StackLayout>
 
 </ContentPage>

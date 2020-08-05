@@ -14,9 +14,8 @@
 
     <MasterDetailPage.Detail>
         <NavigationPage>
-         
             <x:Arguments>
-                <views:AboutPage />
+                <views:DailyStepView />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

@@ -26,6 +26,11 @@ namespace StepCounter.Data
             return _database.Table<User>().Where(p => p.UserId == Id).FirstOrDefaultAsync();
         }
 
+        public Task<User> ReadUserWithUsernameAsync(string username)
+        {
+            return _database.Table<User>().Where(p => p.Username == username).FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveUserAsync(User user)
         {
             if (user.UserId != 0)

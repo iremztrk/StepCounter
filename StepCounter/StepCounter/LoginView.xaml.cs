@@ -1,11 +1,6 @@
 ﻿using StepCounter.Models;
 using StepCounter.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -45,8 +40,6 @@ namespace StepCounter
         {
             InitializeComponent();
             BindingContext = this;
-
-            //var users = App.UserDB.GetUserAsync().Result;
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)
