@@ -9,7 +9,7 @@ namespace StepCounter.Views
     public partial class MenuPage : ContentPage
     {
         private string username;
-            public string Username
+        public string Username
         {
             get => username;
             set
@@ -19,19 +19,33 @@ namespace StepCounter.Views
             }
         }
 
+        
+
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
+
         public MenuPage()
         {
             InitializeComponent();
             BindingContext = this;
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             Username = App.currentUser.Name + " " + App.currentUser.Surname;
+
+            OperationsSelection();
         }
-        
+
+        private async void OperationsSelection()
+        {
+            App.selectedOperation = await DisplayActionSheet("Operasyon Seçiniz", "cancel", null, App.operations);
+            if (!string.IsNullOrEmpty(App.selectedOperation) && (App.selectedOperation != "cancel"))
+            {
+
+            }
+        }
 
         private void buttonLogout_Clicked(object sender, System.EventArgs e)
         {

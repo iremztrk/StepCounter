@@ -26,7 +26,7 @@
                     <TableSection Title="Height">
                         <ViewCell>
                             <StackLayout>
-                                <Label Margin="15,0,0,0" Text="{Binding UserHeight,StringFormat='Selected height is {0:N0}'}" />
+                                <Label Margin="15,0,0,0" Text="{Binding UserHeight,StringFormat='Selected height is {0:N0} cm'}" />
                                 <Slider Value="{Binding UserHeight}" HorizontalOptions="FillAndExpand" MaximumTrackColor="Red" Maximum="250" Minimum="20" MinimumTrackColor="Yellow" ThumbColor="Orange" />
                             </StackLayout>
                         </ViewCell>
@@ -34,7 +34,7 @@
                     <TableSection Title="Weight">
                         <ViewCell>
                             <StackLayout>
-                                <Label Margin="15,0,0,0" Text="{Binding Weight,StringFormat='Selected weight is {0:N0}'}" />
+                                <Label Margin="15,0,0,0" Text="{Binding Weight,StringFormat='Selected weight is {0:N0} kg'}" />
                                 <Slider Value="{Binding Weight}" HorizontalOptions="FillAndExpand" MaximumTrackColor="Red" Maximum="220" Minimum="10" MinimumTrackColor="Yellow" ThumbColor="Orange" />
                             </StackLayout>
                         </ViewCell>

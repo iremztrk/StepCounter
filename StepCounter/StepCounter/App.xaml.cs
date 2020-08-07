@@ -40,10 +40,22 @@ namespace StepCounter
         public static DailyStep todayStep;
         public static int currentSteps;
 
+        public static string[] operations = new string[10];
+        public static string selectedOperation;
+
+
         public App()
         {
+            SetOperationValues();
+
             InitializeComponent();
             MainPage = new NavigationPage(new LoginView());
+        }
+
+        private void SetOperationValues()
+        {
+            operations.SetValue("Toplama", 0);
+            operations.SetValue("Ürün Alım", 1);
         }
 
         protected override void OnStart()

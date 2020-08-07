@@ -47,5 +47,23 @@ namespace StepCounter.Views
             }
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+        }
+
+        void ToolbarItem_Clicked(System.Object sender, System.EventArgs e)
+        {
+            OperationsSelection();
+        }
+
+        private async void OperationsSelection()
+        {
+            App.selectedOperation = await DisplayActionSheet("Operasyon Seçiniz", "cancel", null, App.operations);
+            if (!string.IsNullOrEmpty(App.selectedOperation) && (App.selectedOperation != "cancel"))
+            {
+
+            }
+        }
     }
 }

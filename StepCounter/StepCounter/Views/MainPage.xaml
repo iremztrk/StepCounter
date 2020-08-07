@@ -13,10 +13,13 @@
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
-        <NavigationPage BarBackgroundColor="LightBlue" BarTextColor="Black" Title="Step Counter">
+        <NavigationPage BarBackgroundColor="LightBlue" BarTextColor="MediumPurple" Title="Step Counter">
             <x:Arguments>
                 <views:DailyStepView />
             </x:Arguments>
+             <NavigationPage.ToolbarItems>
+                <ToolbarItem IconImageSource="iconChangeOperation.png" Text="Operasyon Seçimi" Clicked="ToolbarItem_Clicked" />
+            </NavigationPage.ToolbarItems>
         </NavigationPage>
     </MasterDetailPage.Detail>
     
