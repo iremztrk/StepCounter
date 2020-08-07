@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="LightBlue"
+    Title="User Information"
+    x:Class="StepCounter.Views.UserInformationView">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="0">
+
+            <TableView Margin="10" VerticalOptions="Start">
+                <TableRoot>
+                    <TableSection Title="User Info" >
+                        <TextCell Text="Username" Detail="{Binding Username}" />
+                        <TextCell Text="Full Name" Detail="{Binding FullName}" />
+                        <TextCell Text="e-Mail" Detail="{Binding Mail}" />
+                    </TableSection>
+                    <TableSection Title="Age">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Margin="15,0,0,0" Text="{Binding Age,StringFormat='Selected age is {0:N0}'}" />
+                                <Slider Value="{Binding Age}" HorizontalOptions="FillAndExpand" MaximumTrackColor="Red" Maximum="111" Minimum="3" MinimumTrackColor="Yellow" ThumbColor="Orange" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Height">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Margin="15,0,0,0" Text="{Binding UserHeight,StringFormat='Selected height is {0:N0}'}" />
+                                <Slider Value="{Binding UserHeight}" HorizontalOptions="FillAndExpand" MaximumTrackColor="Red" Maximum="250" Minimum="20" MinimumTrackColor="Yellow" ThumbColor="Orange" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                    <TableSection Title="Weight">
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Margin="15,0,0,0" Text="{Binding Weight,StringFormat='Selected weight is {0:N0}'}" />
+                                <Slider Value="{Binding Weight}" HorizontalOptions="FillAndExpand" MaximumTrackColor="Red" Maximum="220" Minimum="10" MinimumTrackColor="Yellow" ThumbColor="Orange" />
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <Button Text="SUBMIT" x:Name="buttonSubmit" Margin="10" FontSize="23" FontAttributes="Bold" BackgroundColor="LightGreen" TextColor="Orange" Clicked="buttonSubmit_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -27,4 +27,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\UserInformationView.xaml.cs">
+      <DependentUpon>UserInformationView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

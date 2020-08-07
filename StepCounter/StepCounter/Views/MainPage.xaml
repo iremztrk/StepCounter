@@ -13,7 +13,7 @@
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
-        <NavigationPage>
+        <NavigationPage BarBackgroundColor="LightBlue" BarTextColor="Black" Title="Step Counter">
             <x:Arguments>
                 <views:DailyStepView />
             </x:Arguments>

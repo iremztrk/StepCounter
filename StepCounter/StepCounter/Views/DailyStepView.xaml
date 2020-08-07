@@ -4,9 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Step Counter"
              x:Class="StepCounter.Views.DailyStepView">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="LightBlue">
             <Label Text="detay sayfası"/>
             <Label Text="Adım Sayısı : " />
             <Label Text="{Binding StepCount}"/>

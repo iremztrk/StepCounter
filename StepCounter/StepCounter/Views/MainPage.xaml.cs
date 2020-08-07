@@ -19,7 +19,7 @@ namespace StepCounter.Views
             App.todayStep = new DailyStep();
             InitializeComponent();
 
-            MasterBehavior = MasterBehavior.Default;
+            // MasterBehavior = MasterBehavior.Default;
 
             // kullanıcı bılgılerını al
             GetCurrentUser(username);
