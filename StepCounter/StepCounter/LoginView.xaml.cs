@@ -100,6 +100,11 @@ namespace StepCounter
         {
             base.OnAppearing();
             Password = "";
+
+
+            ////
+            Username = "asd";
+            Password = "Aa1.";
         }
     }
 }

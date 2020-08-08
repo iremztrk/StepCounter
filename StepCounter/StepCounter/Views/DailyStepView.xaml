@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              mc:Ignorable="d"
              Title="Step Counter"
              x:Class="StepCounter.Views.DailyStepView">
@@ -11,6 +12,8 @@
             <Label Text="detay sayfası"/>
             <Label Text="Adım Sayısı : " />
             <Label Text="{Binding StepCount}"/>
+
+            <microcharts:ChartView HeightRequest="250" x:Name="chart1" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
