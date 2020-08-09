@@ -21,9 +21,9 @@ namespace StepCounter.Data
             return _database.Table<DailyStep>().Where(p => p.UserId == userId).ToListAsync();
         }
 
-        public Task<DailyStep> ReadTodayDailyStepAsync(int userId)
+        public Task<List<DailyStep>> ReadTodayDailyStepAsync(int userId)
         {
-            return _database.Table<DailyStep>().Where(p => p.UserId == userId && p.Date == DateTime.Today).FirstOrDefaultAsync();
+            return _database.Table<DailyStep>().Where(p => p.UserId == userId && p.Date == DateTime.Today).ToListAsync();
         }
 
         public Task<int> SaveUserDailyStepAsync(DailyStep dailyStep)

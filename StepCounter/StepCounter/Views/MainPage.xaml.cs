@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace StepCounter.Views
@@ -16,7 +17,7 @@ namespace StepCounter.Views
         public MainPage(string username)
         {
             App.currentUser = new User();
-            App.todayStep = new DailyStep();
+            App.todayStep = new List<DailyStep>();
             InitializeComponent();
 
             // MasterBehavior = MasterBehavior.Default;
@@ -38,13 +39,13 @@ namespace StepCounter.Views
         private void ReadCurrentUsersTodaySteps()
         {
             App.todayStep = App.StepDB.ReadTodayDailyStepAsync(App.currentUser.UserId).Result;
-            if (App.todayStep == null)
+            /*if (App.todayStep == null)
             {
                 App.todayStep = new DailyStep();
                 App.todayStep.UserId = App.currentUser.UserId;
                 App.todayStep.Date = DateTime.Today;
                 App.todayStep.StepData = 0;
-            }
+            }*/
         }
 
         protected override bool OnBackButtonPressed()
@@ -59,10 +60,10 @@ namespace StepCounter.Views
 
         private async void OperationsSelection()
         {
-            App.selectedOperation = await DisplayActionSheet("Operasyon Seçiniz", "cancel", null, App.operations);
+            App.selectedOperation = await DisplayActionSheet("Operasyon Seçiniz", "cancel", null, App.operations.Values.ToArray());
             if (!string.IsNullOrEmpty(App.selectedOperation) && (App.selectedOperation != "cancel"))
             {
-
+                
             }
         }
     }

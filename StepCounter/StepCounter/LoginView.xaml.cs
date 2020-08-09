@@ -103,7 +103,7 @@ namespace StepCounter
 
 
             ////
-            Username = "asd";
+            Username = "iremztrk";
             Password = "Aa1.";
         }
     }

@@ -19,19 +19,29 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CreateNewUserView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="LoginView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\DailyStepView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Views\CreateNewUserView.xaml.cs" />
+    <Compile Remove="Views\LoginView.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Views\UserInformationView.xaml.cs">
       <DependentUpon>UserInformationView.xaml</DependentUpon>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="CreateNewUserView.xaml.cs">
+      <DependentUpon>CreateNewUserView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>

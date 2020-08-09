@@ -10,5 +10,41 @@ namespace StepCounter.Models
         public long UserId { get; set; }
         public DateTime Date { get; set; }
         public int StepData { get; set; }
+        public int OperationType { get; set; }
+
+        public string StepCountStr
+        {
+            get => StepData.ToString() + " steps";
+        }
+
+        public string LoggedDate
+        {
+            get => Date.ToString("dd MMMM");
+        }
+
+        public string LoggedDay
+        {
+            get => Date.ToString("dd");
+        }
+
+        public string LoggedDay2
+        {
+            get => Date.ToString("ddd");
+        }
+
+        public string LoggedMonth
+        {
+            get => Date.ToString("MMMM");
+        }
+
+        public string Distance
+        {
+            get => Helpers.ConversionHelper.StepsToKilometers(StepData).ToString("0.00 km");
+        }
+
+        public string Calories
+        {
+            get => Helpers.ConversionHelper.CaloriesBurnt(Helpers.ConversionHelper.StepsToMiles(StepData)) + " calories";
+        }
     }
 }

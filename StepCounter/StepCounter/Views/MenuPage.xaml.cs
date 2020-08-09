@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
+using StepCounter.Models;
 using Xamarin.Forms;
 
 namespace StepCounter.Views
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer99
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MenuPage : ContentPage
     {
@@ -18,8 +19,6 @@ namespace StepCounter.Views
                 OnPropertyChanged(nameof(Username));
             }
         }
-
-        
 
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
 
@@ -40,7 +39,7 @@ namespace StepCounter.Views
 
         private async void OperationsSelection()
         {
-            App.selectedOperation = await DisplayActionSheet("Operasyon Seçiniz", "cancel", null, App.operations);
+            App.selectedOperation = await DisplayActionSheet("Operasyon Seçiniz", "cancel", null, App.operations.Values.ToArray());
             if (!string.IsNullOrEmpty(App.selectedOperation) && (App.selectedOperation != "cancel"))
             {
 
@@ -49,8 +48,15 @@ namespace StepCounter.Views
 
         private void buttonLogout_Clicked(object sender, System.EventArgs e)
         {
-            App.todayStep.StepData = App.todayStep.StepData + App.currentSteps;
-            App.StepDB.SaveUserDailyStepAsync(App.todayStep);
+            DailyStep dailyStep = new DailyStep()
+            {
+                Date = DateTime.Now.Date,
+                UserId = App.currentUser.UserId,
+                OperationType = App.GetOperationValue(),
+                StepData = App.currentSteps
+            };
+
+            App.StepDB.SaveUserDailyStepAsync(dailyStep);
             Navigation.PopToRootAsync();
         }
 
@@ -58,9 +64,8 @@ namespace StepCounter.Views
         {
             (this.Parent as MasterDetailPage).IsPresented = false;
             UserInformationView userInformation = new UserInformationView();
-            (this.Parent as MasterDetailPage).Detail.Navigation.PushAsync(userInformation);
-            //(this.Parent as MasterDetailPage).Navigation.PushAsync(userInformation);
-            //Navigation.PushAsync(userInformation);
+            GeneralStepView generalStepView = new GeneralStepView();
+            (this.Parent as MasterDetailPage).Detail.Navigation.PushAsync(generalStepView); //(userInformation);
         }
     }
 }

@@ -129,8 +129,10 @@ namespace StepCounter.Views
         private void StepCounterService_StepCountChanged(object sender, StepCountChangedEventArgs e)
         {
             App.currentSteps = (int)e.Value;
-            StepCount = (App.todayStep.StepData + App.currentSteps).ToString(); //e.Value.ToString();
-            //App.todayStep.StepData = (int)e.Value;
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                StepCount = (App.todayStep.Sum(p => p.StepData) + App.currentSteps).ToString();
+            });
         }
     }
 }
