@@ -4,16 +4,40 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             xmlns:controls="clr-namespace:StepCounter.Controls"
              mc:Ignorable="d"
              Title="Step Counter"
              x:Class="StepCounter.Views.DailyStepView">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="LightBlue">
-            <Label Text="detay sayfası"/>
-            <Label Text="Adım Sayısı : " />
-            <Label Text="{Binding StepCount}"/>
+        <ScrollView>
+            <StackLayout BackgroundColor="LightBlue">
+                <Grid WidthRequest="250" HeightRequest="250">
+                    <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="250" HeightRequest="250" CornerRadius="125" BackgroundColor="#4fc3f7" />
+                    <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="230" HeightRequest="230" CornerRadius="115" BackgroundColor="LightBlue" />
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding StepCount}" FontSize="50" TextColor="Purple" FontAttributes="Bold" />
+                </Grid>
 
-            <microcharts:ChartView HeightRequest="250" x:Name="chart1" />
-        </StackLayout>
+                <Grid HeightRequest="120" ColumnSpacing="0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                        <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
+                        <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
+                        <Label Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding StepCount}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+
+                        <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
+                        <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
+                        <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding StepCount}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                </Grid>
+
+
+                <!--<Label Text="detay sayfası"/>
+                <Label Text="Adım Sayısı : " />
+                <Label Text="{Binding StepCount}"/>-->
+
+                <microcharts:ChartView HeightRequest="250" x:Name="chart1" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -34,7 +34,7 @@ namespace StepCounter.Views
             base.OnAppearing();
             Username = App.currentUser.Name + " " + App.currentUser.Surname;
 
-            OperationsSelection();
+           // OperationsSelection();
         }
 
         private async void OperationsSelection()
