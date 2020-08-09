@@ -52,7 +52,7 @@ namespace StepCounter
 
             InitializeComponent();
 
-           // ArrangeDummyData(1);
+            //ArrangeDummyData(4);
 
             MainPage = new NavigationPage(new LoginView());
         }
@@ -121,6 +121,26 @@ namespace StepCounter
             StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-37), StepData = 2517 });
             StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-38), StepData = 6754 });
             StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-39), StepData = 6348 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-41), StepData = 4253 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-42), StepData = 15253 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-43), StepData = 6422 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-44), StepData = 331 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-45), StepData = 6312 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-46), StepData = 11973 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-47), StepData = 2517 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-48), StepData = 6754 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-49), StepData = 6348 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-50), StepData = 14412 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-51), StepData = 4253 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-52), StepData = 15253 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-53), StepData = 6422 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-54), StepData = 331 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-55), StepData = 6312 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-56), StepData = 11973 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-57), StepData = 2517 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-58), StepData = 6754 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-59), StepData = 6348 });
+            StepDB.SaveUserDailyStepAsync(new DailyStep() { UserId = id, OperationType = 0, Date = DateTime.Now.AddDays(-60), StepData = 14412 });
         }
     }
 }
