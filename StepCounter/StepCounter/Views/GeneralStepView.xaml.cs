@@ -64,8 +64,11 @@ namespace StepCounter.Views
             }
 
             Months = Months.OrderByDescending(p => p.Year).ThenByDescending(p => p.MonthOrder).ToObservableCollection();
-            Months.First().IsSelected = true;
-            StepCountLogList = AllStepCountLogList.Where(p => p.Date.Year == Months.First(x => x.IsSelected).Year && p.Date.Month == Months.First(x => x.IsSelected).MonthOrder).OrderByDescending(p => p.Date).ToObservableCollection();
+            if (Months.Any())
+            {
+                Months.First().IsSelected = true;
+                StepCountLogList = AllStepCountLogList.Where(p => p.Date.Year == Months.First(x => x.IsSelected).Year && p.Date.Month == Months.First(x => x.IsSelected).MonthOrder).OrderByDescending(p => p.Date).ToObservableCollection();
+            }
         }
 
         private void Month_Tapped(object sender, EventArgs e)
@@ -82,7 +85,6 @@ namespace StepCounter.Views
                 }
                 carouselViewMonths.ItemsSource = Months;
             });
-
         }
 
         private void StepCountLog_Tapped(object sender, EventArgs e)
@@ -96,7 +98,6 @@ namespace StepCounter.Views
                 }
             });
         }
-
     }
 
     public class Month
@@ -105,6 +106,7 @@ namespace StepCounter.Views
         public string MonthName { get; set; }
         public int Year { get; set; }
         public bool IsSelected { get; set; } = false;
+
         public string MonthYear
         {
             get => MonthName + ", " + Year;
