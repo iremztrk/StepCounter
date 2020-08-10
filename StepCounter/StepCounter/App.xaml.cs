@@ -52,7 +52,11 @@ namespace StepCounter
 
             InitializeComponent();
 
+            //ArrangeDummyData(1);
+            //ArrangeDummyData(2);
+            //ArrangeDummyData(3);
             //ArrangeDummyData(4);
+            //ArrangeDummyData(5);
 
             MainPage = new NavigationPage(new LoginView());
         }
