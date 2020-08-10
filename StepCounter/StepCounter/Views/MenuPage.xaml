@@ -1,36 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="StepCounter.Views.MenuPage"
-             Title="Menu">
-             
-            <Grid BackgroundColor="LightBlue"> 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="200" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="40" />
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="running2.png" BackgroundColor="LightGreen" />
-                    <Label Grid.Row="0" Text="Step Counter" TextColor="White" FontSize="23" VerticalOptions="Start" HorizontalOptions="Center" FontAttributes="Bold" Margin="5" />
-                    <BoxView Grid.Row="0" HeightRequest="25" VerticalOptions="EndAndExpand" BackgroundColor="LightGreen" HorizontalOptions="FillAndExpand"/>
-                    <Label Grid.Row="0" Text="{Binding Username}" FontSize="18" VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="End" Margin="5,5,25,5" />
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="StepCounter.Views.MenuPage"
+    Title="Menu">
+    <Grid BackgroundColor="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="running2.png" BackgroundColor="LightGreen" />
+        <Label Grid.Row="0" Text="Step Counter" TextColor="White" FontSize="30" VerticalOptions="Start" HorizontalOptions="Center" FontAttributes="Bold" Margin="5" />
+        <BoxView Grid.Row="0" HeightRequest="40" VerticalOptions="EndAndExpand" BackgroundColor="LightGreen" HorizontalOptions="FillAndExpand"/>
+        <Label Grid.Row="0" Text="{Binding Username}" FontAttributes="Italic" FontSize="25" VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="End" Margin="5,5,25,5" />
 
+        <Grid ColumnSpacing="5" RowSpacing="0" Grid.Row="1" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="74" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
 
-                <Button Text="Emanet buton" Clicked="Button_Clicked" Grid.Row="1" />
+            <Frame Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="LightGreen" BorderColor="DarkGreen" CornerRadius="5" />
+            <Image Grid.Column="0" Grid.Row="0" Source="iconCustomer.png" Margin="5" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Grid.Column="0" Grid.Row="1" Text="User Info" TextColor="Orange" FontAttributes="Bold" FontSize="15" Margin="5" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Button Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="5" BorderColor="DarkGray" x:Name="buttonUserInfo" Clicked="buttonUserInfo_Clicked" />
 
-                    <Grid Grid.Row="2" ColumnSpacing="0" BackgroundColor="LightGreen" > 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="40" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Source="icon_logout.png" Margin="5" />
-                        <Label Grid.Column="1" Text="LOGOUT" TextColor="Orange" FontSize="17" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
-                        <Button Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Transparent" BorderColor="LightGreen" BorderWidth="2" CornerRadius="10"
+            <Frame Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="LightGreen" BorderColor="DarkGreen" CornerRadius="5" />
+            <Image Grid.Column="1" Grid.Row="0" Source="iconCalendar.png" Margin="5" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Grid.Column="1" Grid.Row="1" Text="Monthly Summary" TextColor="Orange" FontAttributes="Bold" FontSize="15" Margin="5" VerticalOptions="Start" HorizontalOptions="Center" />
+            <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="Transparent" CornerRadius="5" BorderColor="DarkGray" x:Name="buttonMonthlySummary" Clicked="buttonMonthlySummary_Clicked" />
+        </Grid>
+
+        <Grid Grid.Row="2" ColumnSpacing="0" BackgroundColor="LightGreen" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0" Source="icon_logout.png" Margin="10" />
+            <Label Grid.Column="1" Text="LOGOUT" TextColor="Orange" FontSize="23" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Button Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Transparent" BorderColor="LightGreen" BorderWidth="2" CornerRadius="10"
                                 VerticalOptions="Fill" HorizontalOptions="Fill" Clicked="buttonLogout_Clicked" />
-                    </Grid>
-                </Grid>
-
+        </Grid>
+    </Grid>
 </ContentPage>

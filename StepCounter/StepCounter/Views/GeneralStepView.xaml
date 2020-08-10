@@ -5,7 +5,7 @@
     Title=" Monthly Summary "
     x:Class="StepCounter.Views.GeneralStepView">
     <ContentPage.Content>
-             <StackLayout Spacing="0">
+        <StackLayout BackgroundColor="#d1eeee" Spacing="0">
             <CarouselView ItemsSource="{Binding Months}" BackgroundColor="#d1eeee" HeightRequest="40" x:Name="carouselViewMonths" >
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
@@ -45,9 +45,9 @@
                                 <BoxView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" BackgroundColor="White" />
                                 <BoxView Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" BackgroundColor="#b4cdcd" />
 
-                                <Image Grid.Row="0" WidthRequest="30" HeightRequest="30" Grid.Column="1" Source="icon_step.png" Margin="5" VerticalOptions="Start" HorizontalOptions="Start" />
-                                <Image Grid.Row="0" WidthRequest="30" HeightRequest="30" Grid.Column="2" Source="icon_distance.png" Margin="5" VerticalOptions="Start" HorizontalOptions="Start" />
-                                <Image Grid.Row="1" WidthRequest="30" HeightRequest="30" Grid.Column="1" Source="icon_calories.png" Margin="5" VerticalOptions="Start" HorizontalOptions="Start" />
+                                <Image Grid.Row="0" WidthRequest="30" HeightRequest="30" Grid.Column="1" Source="iconStep.png" Margin="5" VerticalOptions="Start" HorizontalOptions="Start" />
+                                <Image Grid.Row="0" WidthRequest="30" HeightRequest="30" Grid.Column="2" Source="iconRoute.png" Margin="5" VerticalOptions="Start" HorizontalOptions="Start" />
+                                <Image Grid.Row="1" WidthRequest="30" HeightRequest="30" Grid.Column="1" Source="iconCalories.png" Margin="5" VerticalOptions="Start" HorizontalOptions="Start" />
 
                                 <Label Margin="40,5,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="1" Text="{Binding StepCountStr}" TextColor="White" FontSize="17" />
                                 <Label Margin="40,5,0,0" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Grid.Row="0" Grid.Column="2" Text="{Binding Distance}" TextColor="White" FontSize="17" />

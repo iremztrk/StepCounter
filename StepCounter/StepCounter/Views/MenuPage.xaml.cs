@@ -60,12 +60,18 @@ namespace StepCounter.Views
             Navigation.PopToRootAsync();
         }
 
-        void Button_Clicked(System.Object sender, System.EventArgs e)
+        private void buttonUserInfo_Clicked(object sender, EventArgs e)
         {
             (this.Parent as MasterDetailPage).IsPresented = false;
             UserInformationView userInformation = new UserInformationView();
+            (this.Parent as MasterDetailPage).Detail.Navigation.PushAsync(userInformation); 
+        }
+
+        private void buttonMonthlySummary_Clicked(object sender, EventArgs e)
+        {
+            (this.Parent as MasterDetailPage).IsPresented = false;
             GeneralStepView generalStepView = new GeneralStepView();
-            (this.Parent as MasterDetailPage).Detail.Navigation.PushAsync(generalStepView); //(userInformation);
+            (this.Parent as MasterDetailPage).Detail.Navigation.PushAsync(generalStepView); 
         }
     }
 }
