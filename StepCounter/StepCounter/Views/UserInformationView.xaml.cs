@@ -78,8 +78,6 @@ namespace StepCounter.Views
             InitializeComponent();
             BindingContext = this;
 
-
-            Age = 29;
             Weight = 95;
             UserHeight = 187;
         }
@@ -87,15 +85,25 @@ namespace StepCounter.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
+            
             Username = App.currentUser.Username;
             FullName = App.currentUser.FullName;
             Mail = App.currentUser.Email;
+            Age = App.currentUser.Age;
+            UserHeight = (int)App.currentUser.Height;
+            Weight = App.currentUser.Weight;
         }
 
         private async void buttonSubmit_Clicked(System.Object sender, System.EventArgs e)
         {
+            App.currentUser.Age = Age;
+            App.currentUser.Height = UserHeight;
+            App.currentUser.Weight = Weight;
+
+            await App.UserDB.SaveUserAsync(App.currentUser);
+            
             await DisplayAlert("", "Successfully submitted", "OK");
+
             await Navigation.PopAsync();
         }
     }

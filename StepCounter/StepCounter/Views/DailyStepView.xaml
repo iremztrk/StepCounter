@@ -24,13 +24,13 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                        <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
-                        <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
-                        <Label Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding StepCount}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                    <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
+                    <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
+                    <Label Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Distance2}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
 
-                        <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
-                        <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
-                        <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding StepCount}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                    <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
+                    <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
+                    <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Calories2}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
                 </Grid>
 
                 <microcharts:ChartView HeightRequest="250" x:Name="chart1" />

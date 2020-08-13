@@ -144,8 +144,11 @@ namespace StepCounter
                 newUser.Surname = Surname;
                 newUser.Password = Password;
                 newUser.Email = Email;
+                newUser.Age = 22;
+                newUser.Height = 170;
+                newUser.Weight = 55;
 
-                var response = App.UserDB.CheckUserBeforeInsert(newUser);
+                var response =App.UserDB.CheckUserBeforeInsert(newUser );
 
                 if (response.Success)
                 {
