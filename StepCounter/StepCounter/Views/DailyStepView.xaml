@@ -15,7 +15,7 @@
                     <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="250" HeightRequest="250" CornerRadius="125" BackgroundColor="#4fc3f7" />
                     <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="230" HeightRequest="230" CornerRadius="115" BackgroundColor="LightBlue" />
                     <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding StepCount}" FontSize="50" TextColor="Purple" FontAttributes="Bold" />
-                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="HEDEF 10000" TextColor="MediumPurple" FontSize="17" Margin="0,80,0,0" />
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" Text="STEPS" TextColor="MediumPurple" FontSize="30" Margin="0,80,0,0" />
                     <Image WidthRequest="50" HeightRequest="50" Source="iconStep.png" Margin="0,0,0,100" VerticalOptions="Center" HorizontalOptions="Center" />
                 </Grid>
 
@@ -24,16 +24,30 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
-                    <BoxView Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
-                    <Label Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Distance2}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                    <Grid Grid.Column="0" WidthRequest="120" HeightRequest="120"> 
+                        <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
+                        <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
+                        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Distance}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="KM" TextColor="MediumPurple" FontSize="19" Margin="0,50,0,0" />
+                        <Image WidthRequest="35" HeightRequest="35" Source="iconRoute.png" Margin="0,0,0,60" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
 
-                    <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
-                    <BoxView Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
-                    <Label Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Calories2}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                    <Grid Grid.Column="1" WidthRequest="120" HeightRequest="120"> 
+                        <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="120" HeightRequest="120" CornerRadius="60" BackgroundColor="#4fc3f7" />
+                        <BoxView VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="100" HeightRequest="100" CornerRadius="50" BackgroundColor="LightBlue" />
+                        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Calories}" FontSize="25" TextColor="Purple" FontAttributes="Bold" />
+                        <Label VerticalOptions="Center" HorizontalOptions="Center" Text="CAL" TextColor="MediumPurple" FontSize="19" Margin="0,50,0,0" />
+                        <Image WidthRequest="35" HeightRequest="35" Source="iconCalories.png" Margin="0,0,0,60" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </Grid>
                 </Grid>
 
-                <microcharts:ChartView HeightRequest="250" x:Name="chart1" />
+
+                <Grid BackgroundColor="#4fc3f7" HeightRequest="300">
+                    <Frame BorderColor="#4fc3f7" BackgroundColor="Transparent" VerticalOptions="Fill" HorizontalOptions="Fill" />
+                    <Label HorizontalOptions="Center" VerticalOptions="Start" Text="WEEKLY STEP COUNTS" TextColor="Purple" FontSize="25" Margin="5" />
+                    <microcharts:ChartView HeightRequest="250" Margin="5,40,5,3" x:Name="chart1" />
+                </Grid>
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

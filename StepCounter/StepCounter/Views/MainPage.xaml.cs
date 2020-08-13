@@ -39,13 +39,6 @@ namespace StepCounter.Views
         private void ReadCurrentUsersTodaySteps()
         {
             App.todayStep = App.StepDB.ReadTodayDailyStepAsync(App.currentUser.UserId).Result;
-            /*if (App.todayStep == null)
-            {
-                App.todayStep = new DailyStep();
-                App.todayStep.UserId = App.currentUser.UserId;
-                App.todayStep.Date = DateTime.Today;
-                App.todayStep.StepData = 0;
-            }*/
         }
 
         protected override bool OnBackButtonPressed()

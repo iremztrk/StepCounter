@@ -42,19 +42,9 @@ namespace StepCounter.Models
             get => Helpers.ConversionHelper.StepsToKilometers(StepData).ToString("0.00 km");
         }
 
-        public string Distance2
-        {
-            get => Helpers.ConversionHelper.StepsToKilometers(StepData).ToString("0.00");
-        }
-
         public string Calories
         {
             get => Helpers.ConversionHelper.CaloriesBurnt(Helpers.ConversionHelper.StepsToMiles(StepData)) + " calories";
-        }
-
-        public string Calories2
-        {
-            get => Helpers.ConversionHelper.CaloriesBurnt(Helpers.ConversionHelper.StepsToMiles(StepData));
         }
     }
 }
